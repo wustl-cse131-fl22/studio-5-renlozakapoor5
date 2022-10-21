@@ -79,7 +79,7 @@ public class Methods {
 			{
 				result += replacement;
 			}
-			else
+			else //no replacement
 			{
 				result += character[i];
 			}
@@ -117,18 +117,25 @@ public class Methods {
 	
 	
 	public static int[] filledArray(int length, int value) {
-		int[] values = null; // FIXME: Create an array of the appropriate size
+		int[] values = new int [length]; // FIXME: Create an array of the appropriate size
 		// TODO: Finish this method
-
-		
+		for (int i = 0; i < length; i++) {
+			values[i] = value;
+		}
 
 		return values;
 	}
 
 	// TODO: Create an arrayMean method which accepts an int array of values parameter.
 	// TODO: Create a JavaDoc comment for the arrayMean method.
+	/**
+	 * this method computes and returns the average of the given array 
+	 * @param values array with values to be averaged
+	 * @return the average of the values in the array
+	 */
 
 	public static double arrayMean(int[] values ) {
-		return arraySum(values)/values.length;
+		int sum = arraySum(values);
+		return ((double)sum)/values.length;
 	}
 }
